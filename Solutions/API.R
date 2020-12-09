@@ -1,9 +1,5 @@
-cat("\014")
-
 # WEBSCRAPING ----
-
 # 1.0 LIBRARIES ----
-
 library(tidyverse) # Main Package - Loads dplyr, purrr, etc.
 library(rvest)     # HTML Hacking & Web Scraping
 library(xopen)     # Quickly opening URLs
