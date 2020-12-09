@@ -1,4 +1,3 @@
-cat("\014")
 library(vroom)
 library(ggplot2)
 library(dplyr)
