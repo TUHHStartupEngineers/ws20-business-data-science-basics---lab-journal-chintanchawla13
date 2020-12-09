@@ -1,22 +1,15 @@
-cat("\014")
-
 library(tidyverse)
 library(ggthemes)
 library(lubridate)
 library(ggrepel)
 
-## DATA PREPARATION
-
-library(tidyverse)
 covid_data_tbl <- read_csv("https://opendata.ecdc.europa.eu/covid19/casedistribution/csv")
-
-
 covid_data_2020_cumulative_cases <- covid_data_tbl %>%
   select(countriesAndTerritories, month, year, cases) %>% 
   set_names(c("country", "month", "year", "cases")) %>%
   
   # Selecting columns to focus on and adding a month column
-  
+
   filter(year == "2020") %>%
   filter(country %in%  c("Germany", "Spain", "France","United_States_of_America","United_Kingdom"))  %>%
   
@@ -72,6 +65,4 @@ covid_data_2020_cumulative_cases  %>%
   theme_light() +
   theme(title = element_text(face = "bold", color = "#08306B"),
         legend.position  = "bottom",
-        axis.text.x = element_text(angle = 45))
-
-  
+        axis.text.x = element_text(angle = 45)) 
